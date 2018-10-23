@@ -22,10 +22,13 @@ class ArticleController
   }
 
   /**
-   * @Route("/news/why-asteroids-taste-like-bacon")
+   * @Route("/news/{slug}")
    */
-  public function show()
+  public function show($slug)
   {
-    return new Response('Future page to show one space article, not the route above is called a slug aka a url version of a title');
+    return new Response(sprintf(
+      'Future page to the article: %s',
+    $slug
+    ));
   }
 }
